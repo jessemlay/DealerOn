@@ -1,0 +1,24 @@
+﻿@model IEnumerable<DealerOn.Web.Models.Product>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Products</h1>
+<div class="d-flex">
+@foreach (var item in Model)
+{
+    <div>
+        <div class="card border-primary m-2" style="min-width: 15rem;">
+            <div class="card-header">@item.Name</div>
+            <div class="card-body">
+                <p class="card-text"> <img style="height: 5rem;" src="@Html.DisplayFor(modelItem => item.Image)" /></p>
+            </div>
+            <div class="card-footer">
+                <p class="card-text">$@item.Price</p>
+                <button class="rounded">Add to Cart</button>
+                <input type="number" id="inputQuantity" name="Quantity" style="width: 3rem;" value="1">
+            </div>
+        </div>
+    </div>
+}
+</div>
